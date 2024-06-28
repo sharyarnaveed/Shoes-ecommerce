@@ -18,7 +18,7 @@ logo:String,
         <router-link to="/"><li>Home</li></router-link> 
         <router-link to="/Shop-now"><li>Shop Now</li></router-link>
         <router-link to="/about-us"><li>About Us</li></router-link>
-        <router-link to="/contact-us"><li>Contact</li></router-link>
+        <router-link to="/contact"><li>Contact</li></router-link>
     </ul>
 
     <div className="login_button">

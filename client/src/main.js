@@ -4,6 +4,7 @@ import App from './App.vue'
 import { createRouter,createWebHistory} from 'vue-router';
 import homepage from './components/homepage.vue';
 import about from './components/about.vue';
+import Contact from './components/contact.vue';
 
 const routes=[
 
@@ -15,6 +16,10 @@ const routes=[
     {
         path: '/about-us',
         component:about
+    },
+    {
+        path: '/contact',
+        component:Contact
     }
 ];
 

@@ -1,0 +1,92 @@
+.contact_container
+{
+    /* border: 2px solid yellow; */
+height: 84%;
+display: flex;
+justify-content: space-between;
+}
+.conimage
+{
+    /* border: 2px solid pink; */
+    width: 40%;
+}
+.conimage img
+{
+    width: 100%;
+    height: 100%;
+}
+.contactform
+{
+    /* border: 2px solid green; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.contactform h1
+{
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+.conform
+{
+    /* border: 2px solid brown; */
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 15px;
+    /* justify-content: center; */
+    align-items: center;
+}
+.conform input
+{
+    height: 40px;
+    border: 2px solid black;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    font-size: 17px;
+    border-radius:10px ;
+    padding: 0px 5px;
+    width: 70%;
+}
+.conform textarea
+{
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: 2px solid black;
+    font-size: 17px;
+    border-radius:10px ;
+    padding: 5px 5px;
+}
+.conform button
+{
+    height: 50px;
+    width:30%;
+    border-radius:10px ;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+}
+
+.mail_responce
+{
+    /* border: 2px solid purple; */
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.856);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.mail_responce h2
+{
+    font-size: 40px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}

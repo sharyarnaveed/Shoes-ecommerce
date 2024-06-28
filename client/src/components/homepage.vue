@@ -9,6 +9,7 @@ defineProps({
 
 
 <template>
+  <main>
     <navbar logo="./src/assets/puma.png"  />
     <section className='container'>
         
@@ -28,7 +29,8 @@ defineProps({
    
         </div>
         <div className="parts">
-           <img src="./src/assets/shoes.png" alt="" />
+           <img src="/src/assets/shoes.png" alt="" />
         </div>
        </section>
+      </main>
 </template>
