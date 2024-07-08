@@ -114,14 +114,21 @@ res.json(result);
 })
 
 
-app.get('/productdetail',async(req,res)=>
+const getitemsdetail=async(id)=>
 {
-  const id =req.query.id;
-const sql="SELECT * FROM \`THEPRODUCTS\` WHERE \`product_id\`=?";
-const [result,fields]=await connection.execute(sql,[id]);
-console.log(result);
+  const sql="SELECT * FROM \`THEPRODUCTS\` WHERE \`product_id\`=?";
+  const [result,fields]=await connection.execute(sql,[id]);
+  // console.log(result);
+  return result;
 
-console.log(id);
+}
+
+app.get('/productdetail/:id',async(req,res)=>
+{
+  const id =req.params.id;
+  const itemdatils= await getitemsdetail(id);
+console.log(itemdatils);
+res.json(itemdatils);
 
 })
 
