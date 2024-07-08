@@ -1,0 +1,43 @@
+main
+{
+    border: 2px solid red;
+
+}
+.admin_container
+{
+    border: 2px solid orange;
+    height: 100%;
+    display: flex;
+}
+
+.formcontainer
+{
+    border: 2px solid orange;
+    width: 75%;
+}
+.formcontainer h1
+{
+    font-size: 50px;
+    text-align: center;
+margin: 15px 15px;
+}
+.formcontainer form
+{
+    border: 2px solid purple;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+flex-direction: column;
+gap: 30px;
+}
+.formcontainer form input
+{
+    height: 10%;
+    width: 50%;
+}
+.formcontainer form button
+{
+    width: 20%;
+    height: 10%;
+}

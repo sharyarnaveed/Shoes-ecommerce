@@ -1,5 +1,13 @@
 <template>
+  <main>
+
   <section class="admin_container">
+    <sidepanel/>
+
+    <section class="formcontainer">
+      
+    <h1>Add Product</h1>
+    
     <form @submit.prevent="saveProduct">
       <input type="text" v-model="theproduct_data.name" placeholder="Title">
       <input type="text" v-model="theproduct_data.description" placeholder="Description">
@@ -8,9 +16,16 @@
       <button type="submit">Submit</button>
     </form>
   </section>
+  </section>
+
+
+  </main>
+ 
 </template>
 
 <script setup>
+import sidepanel from './components/sidepanel.vue';
+import './css/addproduct.css';
 import { ref } from 'vue';
 import axios from 'axios';
 const theproduct_data=ref({
@@ -41,4 +56,4 @@ const saveProduct=()=>{
 
 
 
-c
+

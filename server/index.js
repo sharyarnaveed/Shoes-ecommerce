@@ -8,10 +8,15 @@ const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const path =require('path')
-// const multer=require(multer)
+const bcrypt=require('bcryptjs');
+const { log } = require("console");
+const router = express.Router();
+
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 
 app.post("/sendmail"  ,async (req, res) => {
   const { email, subject, message } = req.body;
@@ -73,6 +78,52 @@ app.post('/save_data', upload.single('image'), async (req, res) => {
   }
 });
 
+
+app.post('/login-admin',async(req,res)=>
+{
+  const {username,password}=req.body;
+const salt= await bcrypt.genSalt(10);
+const hash=await bcrypt.hash(password,salt);
+const sql = `SELECT * FROM \`admin\` WHERE \`username\` = ?`;
+const [result,fields]=await connection.execute(sql,[username]);
+if(result.length>0){
+  const isMatch=await bcrypt.compare(password,result[0].password);
+  if(isMatch){
+    res.json({success:true,message:'Login successful',admin:result[0]});
+    // router.push('/the-admin-panel');
+    }
+    else{
+      res.json({success:false,message:'Invalid username or password'});
+      }
+} 
+
+
+})
+
+app.get('/the-admin-panel',async(req,res)=>
+{
+  res.send({success:false});
+})
+
+app.get('/productdata',async(req,res)=>
+{
+  const sql = `SELECT * FROM \`theproducts\` `;
+const [result,fields]= await connection.execute(sql);
+// console.log(result);
+res.json(result);
+})
+
+
+app.get('/productdetail',async(req,res)=>
+{
+  const id =req.query.id;
+const sql="SELECT * FROM \`THEPRODUCTS\` WHERE \`product_id\`=?";
+const [result,fields]=await connection.execute(sql,[id]);
+console.log(result);
+
+console.log(id);
+
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

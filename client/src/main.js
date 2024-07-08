@@ -5,8 +5,11 @@ import { createRouter,createWebHistory} from 'vue-router';
 import homepage from './components/homepage.vue';
 import about from './components/about.vue';
 import Contact from './components/contact.vue';
-// import Upload_product from './admin/upload_product.vue';
-import Upload_product from '../view/admin/upload_product.vue';
+import Upload_product from './admin/upload_product.vue';
+// import Upload_product from '../view/admin/upload_product.vue';
+// import Adlogin from '../view/admin/adlogin.vue';
+import Adlogin from './admin/adlogin.vue';
+import Shopnow from './components/shopnow.vue';
 
 const routes=[
 
@@ -26,6 +29,15 @@ const routes=[
     {
         path:'/the-admin-panel',
         component:Upload_product
+    }
+    ,
+    {
+        path:'/adlogin',
+        component:Adlogin
+    },
+    {
+        path:'/productdata',
+        component:Shopnow
     }
 ];
 
