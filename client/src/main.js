@@ -10,6 +10,7 @@ import Upload_product from './admin/upload_product.vue';
 // import Adlogin from '../view/admin/adlogin.vue';
 import Adlogin from './admin/adlogin.vue';
 import Shopnow from './components/shopnow.vue';
+import Itemdetail from './components/itemdetail.vue';
 
 const routes=[
 
@@ -38,6 +39,11 @@ const routes=[
     {
         path:'/productdata',
         component:Shopnow
+    },{
+        path:'/productdata/:id',
+        component:Itemdetail,
+        name:'itemdetail',
+        props:true
     }
 ];
 

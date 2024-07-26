@@ -11,24 +11,24 @@ defineProps({
 <template>
   <main>
     <navbar logo="./src/assets/puma.png"  />
-    <section className='container'>
+    <section class='container'>
         
-        <div className="parts">
-           <div className="slogan">
+        <div class="parts">
+           <div class="slogan">
            <h1>YOUR FEET DESERVE <br /> THE BEST</h1>
            </div>
-   <div className="description">
+   <div class="description">
      <p>YOUR FEET DESERVE THE BEST AND WE’RE HERE TO <br /> HELP YOU WITH OUR SHOES.YOUR FEET DESERVE <br /> THE BEST AND WE’RE HERE TO HELP YOU WITH OUR <br /> SHOES.</p>
    </div>
    
-   <div className="two_buttons">
-     <button className='shop_button'>Shop Now</button>
-     <button className='category_button'>Category</button>
+   <div class="two_buttons">
+     <router-link to="/productdata"  class='shop_button'>Shop Now</router-link>
+     <button class='category_button'>Category</button>
    </div>
    
    
         </div>
-        <div className="parts">
+        <div class="parts">
            <img src="/src/assets/shoes.png" alt="" />
         </div>
        </section>

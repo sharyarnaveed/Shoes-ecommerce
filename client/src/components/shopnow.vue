@@ -17,19 +17,19 @@ const fetchData = async () => {
 
 onMounted(fetchData);
 
-const detail=async(id)=>
-{
-   const  encode= encodeURIComponent(id)
-   console.log(encode);
-try {
+// const detail=async(id)=>
+// {
+// //    const  encode= encodeURIComponent(id)
+// //    console.log(encode);
+// try {
 
-    const response=await axios.get(`http://localhost:3000/productdetail?id=${encode}`);
-    console.log(response.data);
+//     const response=await axios.get(`http://localhost:3000/productdetail?id=${id}`);
+//     console.log(response.data);
     
-} catch (error) {
-    console.log(error);
-}
-}
+// } catch (error) {
+//     console.log(error);
+// }
+// }
 
 
 </script>
@@ -40,7 +40,7 @@ try {
     <main>
         <Navbar logo="./src/assets/puma.png" /> <!-- Adjust props as needed -->
         <section class="productsection">
-            <div v-for="item in items" :key="item.product_id" class="card_section" @click="detail(item.product_id)">
+            <router-link :to="{name:'itemdetail',params:{id:item.product_id}}"  v-for="item in items" :key="item.product_id" class="card_section">
                 <div class="img">
                     <img :src="`http://localhost:3000/${item.product_image}`" alt="product">
                 </div>
@@ -48,7 +48,7 @@ try {
                     <h3>{{ item.product_name }}</h3>
                     <h4>Rs. {{ item.price }}</h4>
                 </div>
-            </div>
+            </router-link>
         </section>
     </main>
 </template>

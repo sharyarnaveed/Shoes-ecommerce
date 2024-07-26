@@ -118,7 +118,7 @@ const getitemsdetail=async(id)=>
 {
   const sql="SELECT * FROM \`THEPRODUCTS\` WHERE \`product_id\`=?";
   const [result,fields]=await connection.execute(sql,[id]);
-  // console.log(result);
+  console.log(result);
   return result;
 
 }

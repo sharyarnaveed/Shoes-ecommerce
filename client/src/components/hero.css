@@ -45,6 +45,10 @@
 .shop_button
 {
     width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
     height: 50px;
     font-size: 18px;
     border-radius: 5px;
